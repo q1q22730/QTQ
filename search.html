@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索筛选 - 岳阳高中书本转赠交流网站</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/search.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="../assets/images/logo.png" alt="Logo">
+                <h1>岳阳高中书本转赠交流网站</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="search.html" class="active">搜索筛选</a></li>
+                    <li><a href="publish.html">发布书籍</a></li>
+                    <li><a href="forum.html">交流论坛</a></li>
+                    <li><a href="donation.html">捐赠书籍</a></li>
+                    <li><a href="book-manage.html">书籍管理</a></li>
+                </ul>
+                <div class="user-area">
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <img src="https://api.dicebear.com/7.x/initials/svg?seed=YY" alt="用户头像">
+                        </div>
+                        <span class="username">张同学</span>
+                    </div>
+                    <div class="user-dropdown">
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="fas fa-user"></i>个人中心
+                        </a>
+                        <a href="book-manage.html" class="dropdown-item">
+                            <i class="fas fa-book"></i>我的书籍
+                        </a>
+                        <a href="#" class="dropdown-item" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>退出登录
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <!-- 搜索区域 -->
+            <div class="search-header">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="输入书名、作者或关键词...">
+                    <button id="searchBtn">
+                        <i class="fas fa-search"></i> 搜索
+                    </button>
+                </div>
+                
+                <!-- 高级筛选 -->
+                <div class="advanced-filters">
+                    <div class="filter-group">
+                        <label>适用年级</label>
+                        <select id="gradeFilter">
+                            <option value="">请选择</option>
+                            <option value="grade1">适用全部</option>
+                            <option value="grade2">高一</option>
+                            <option value="grade3">高二</option>
+                            <option value="grade4">高三</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>书籍成色</label>
+                        <select id="gradeFilter">
+                            <option value="">请选择</option>
+                            <option value="grade1">无要求</option>
+                            <option value="grade2">全新</option>
+                            <option value="grade3">还算新</option>
+                            <option value="grade4">有点旧</option>
+                            <option value="grade5">很旧</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>书籍类别</label>
+                        <select id="subjectFilter">
+                            <option value="">全部类别</option>
+                            <option value="math">学习材料</option>
+                            <option value="chinese">课外读物</option>
+                            <option value="english">笔记资料</option>
+                            <option value="physics">漫画绘本</option>
+                            <option value="chemistry">杂志</option>
+                            <option value="biology">其他</option>
+                        </select>
+                    </div>
+                    
+                    
+                    
+                    <div class="filter-group">
+                        <label>状态</label>
+                        <select id="statusFilter">
+                            <option value="">全部状态</option>
+                            <option value="available">可借阅</option>
+                            <option value="borrowed">已借出</option>
+                            <option value="reserved">已预约</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 搜索结果 -->
+            <div class="search-results">
+                <div class="results-header">
+                    <h2>搜索结果 <span id="resultCount">(0)</span></h2>
+                    <div class="sort-options">
+                        <select id="sortOption">
+                            <option value="relevance">相关度</option>
+                            <option value="newest">最新发布</option>
+                            <option value="popular">最受欢迎</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 结果列表 -->
+                <div class="results-grid" id="resultsContainer">
+                    <!-- 结果项将通过JavaScript动态加载 -->
+                </div>
+
+                <!-- 分页控件 -->
+                <div class="pagination">
+                    <button class="page-btn prev-btn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="page-numbers">
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <span>...</span>
+                        <button class="page-btn">10</button>
+                    </div>
+                    <button class="page-btn next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>关于我们</h3>
+                <p>岳阳高中书本转赠交流平台致力于促进教材资源的有效流转</p>
+            </div>
+            <div class="footer-section">
+                <h3>联系方式</h3>
+                <p>邮箱：contact@example.com</p>
+                <p>电话：123-456-7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 岳阳高中书本转赠交流网站. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/search.js"></script>
+</body>
+</html>

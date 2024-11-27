@@ -1,0 +1,351 @@
+/* 论坛容器样式 */
+.forum-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 2rem;
+}
+
+/* 论坛头部样式 */
+.forum-header {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+}
+
+.forum-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.new-topic-btn {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.new-topic-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* 搜索框样式 */
+.forum-search {
+    display: flex;
+    gap: 0.5rem;
+    flex: 1;
+    max-width: 400px;
+    margin-left: 2rem;
+}
+
+.forum-search input {
+    flex: 1;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--border-color);
+    border-radius: 25px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.forum-search input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
+    outline: none;
+}
+
+.forum-search button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forum-search button:hover {
+    background: var(--secondary-color);
+    transform: rotate(90deg);
+}
+
+/* 筛选器样式 */
+.forum-filters {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.forum-filters select {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--border-color);
+    border-radius: 25px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    background-color: white;
+    min-width: 150px;
+    transition: all 0.3s ease;
+}
+
+.forum-filters select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
+    outline: none;
+}
+
+/* 话题列表样式 */
+.topic-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.topic-item {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.topic-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+.topic-avatar img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.topic-item:hover .topic-avatar img {
+    transform: scale(1.1);
+}
+
+.topic-content {
+    flex: 1;
+}
+
+.topic-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.topic-header h3 {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.topic-tag {
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.topic-tag.study {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.topic-tag.books {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.topic-tag.experience {
+    background-color: #fff3e0;
+    color: #f57c00;
+}
+
+.topic-preview {
+    color: #666;
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.topic-meta {
+    display: flex;
+    gap: 2rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.topic-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.topic-meta span:hover {
+    color: var(--primary-color);
+}
+
+.topic-meta i {
+    font-size: 1.1rem;
+}
+
+/* 分页控件样式 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    gap: 0.8rem;
+}
+
+.page-numbers {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.page-btn {
+    min-width: 40px;
+    height: 40px;
+    border: none;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.page-btn.active {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.page-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* 热门话题标签样式 */
+.hot-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 1rem 0 2rem 0;
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    align-items: center;
+}
+
+.hot-tags h2 {
+    margin-right: 1rem;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* 修改标签选择器，使用类选择器而不是nth-child */
+.hot-tags .tag {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 为每个标签设置不同的颜色 */
+.hot-tags .tag[data-tag="高考复习"] {
+    background-color: #E3F2FD;
+    color: #1976D2;
+}
+
+.hot-tags .tag[data-tag="学习方法"] {
+    background-color: #F3E5F5;
+    color: #7B1FA2;
+}
+
+.hot-tags .tag[data-tag="教材推荐"] {
+    background-color: #E8F5E9;
+    color: #388E3C;
+}
+
+.hot-tags .tag[data-tag="考试技巧"] {
+    background-color: #FFF3E0;
+    color: #F57C00;
+}
+
+.hot-tags .tag[data-tag="学科难点"] {
+    background-color: #FFEBEE;
+    color: #D32F2F;
+}
+
+/* 其他标签样式保持不变 */
+.hot-tags .tag:hover {
+    transform: translateY(-1px);
+    filter: brightness(0.95);
+}
+
+.hot-tags .tag.active {
+    font-weight: 500;
+    box-shadow: inset 0 0 0 1.5px currentColor;
+}
+
+.hot-tags .tag::before {
+    content: '#';
+    margin-right: 2px;
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+.hot-tags .tag:active {
+    transform: translateY(1px);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .hot-tags {
+        padding: 1rem;
+        gap: 0.6rem;
+    }
+
+    .hot-tags .tag {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+}

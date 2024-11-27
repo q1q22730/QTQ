@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+html lang="zh-CN">
+head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>发布书籍 - 岳阳高中书本转赠交流网站</title>
+   <link rel="stylesheet" href="../css/main.css">
+   <link rel="stylesheet" href="../css/publish.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   <script src="../js/main.js" defer></script>
+</head>
+<body>
+   <header>
+       <div class="header-content">
+           <div class="logo">
+               <img src="../assets/images/logo.png" alt="Logo">
+               <h1>岳阳高中书本转赠交流网站</h1>
+           </div>
+           <nav>
+               <ul class="nav-links">
+                   <li><a href="../index.html">首页</a></li>
+                   <li><a href="search.html">搜索筛选</a></li>
+                   <li><a href="publish.html">发布书籍</a></li>
+                   <li><a href="forum.html">交流论坛</a></li>
+                   <li><a href="donation.html">捐赠书籍</a></li>
+                   <li><a href="book-manage.html">书籍管理</a></li>
+               </ul>
+               <div class="user-area">
+                   <div class="user-info">
+                       <div class="user-avatar">
+                           <img src="https://api.dicebear.com/7.x/initials/svg?seed=YY" alt="用户头像">
+                       </div>
+                       <span class="username">张同学</span>
+                   </div>
+                   <div class="user-dropdown">
+                       <a href="profile.html" class="dropdown-item">
+                           <i class="fas fa-user"></i>个人中心
+                       </a>
+                       <a href="book-manage.html" class="dropdown-item">
+                           <i class="fas fa-book"></i>我的书籍
+                       </a>
+                       <a href="#" class="dropdown-item" id="logoutBtn">
+                           <i class="fas fa-sign-out-alt"></i>退出登录
+                       </a>
+                   </div>
+               </div>
+           </nav>
+       </div>
+   </header>
+    <main>
+       <div class="container">
+           <div class="publish-container">
+               <h2>发布书籍</h2>
+               <form id="publishForm" class="publish-form">
+                   <!-- 基本信息 -->
+                   <div class="form-section">
+                       <h3>基本信息</h3>
+                       <div class="form-group">
+                           <label for="bookName">书籍名称</label>
+                           <input type="text" id="bookName" required placeholder="请输入书籍名称">
+                       </div>
+                       <div class="form-group">
+                           <label for="bookCategory">书籍类别</label>
+                           <select id="bookCategory" required>
+                               <option value="">请选择类别</option>
+                               <option value="textbook">学习材料</option>
+                               <option value="reference">课外读物</option>
+                               <option value="exercise">笔记资料</option>
+                               <option value="other">漫画绘本</option>
+                               <option value="other">杂志</option>
+                               <option value="other">其他</option>
+                           </select>
+                       </div>
+                       <div class="form-group">
+                           <label for="bookGrade">适用年级</label>
+                           <select id="bookGrade" required>
+                               <option value="">请选择</option>
+                               <option value="grade1">适用全部</option>
+                               <option value="grade2">高一</option>
+                               <option value="grade3">高二</option>
+                               <option value="grade4">高三</option>
+                           </select>
+                       </div>
+                   </div>
+                    <!-- 书籍状态 -->
+                   <div class="form-section">
+                       <h3>书籍状态</h3>
+                       <div class="form-group">
+                           <label for="bookCondition">书籍成色</label>
+                           <select id="bookCondition" required>
+                               <option value="">请选择成色</option>
+                               <option value="new">全新</option>
+                               <option value="like-new">还算新</option>
+                               <option value="good">有点旧</option>
+                               <option value="fair">很旧</option>
+                           </select>
+                       </div>
+                       <div class="form-group">
+                           <label>书籍照片</label>
+                           <div class="image-upload">
+                               <input type="file" id="bookImages" multiple accept="image/*">
+                               <div class="upload-preview" id="imagePreview">
+                                   <div class="upload-hint">
+                                       <i class="fas fa-cloud-upload-alt"></i>
+                                       <p>点击或拖拽上传图片</p>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                    <!-- 联系方式 -->
+                   <div class="form-section">
+                       <h3>联系方式</h3>
+                       <div class="form-group">
+                           <label for="contactName">联系人</label>
+                           <input type="text" id="contactName" required placeholder="请输入联系人姓名">
+                       </div>
+                       <div class="form-group">
+                           <label for="contactPhone">联系电话</label>
+                           <input type="tel" id="contactPhone" required placeholder="请输入联系电话">
+                       </div>
+                       <div class="form-group">
+                           <label for="description">补充说明</label>
+                           <textarea id="description" rows="4" placeholder="请输入补充说明（选填）"></textarea>
+                       </div>
+                   </div>
+                    <div class="form-actions">
+                       <button type="submit" class="btn-primary">发布书籍</button>
+                       <button type="reset" class="btn-secondary">重置表单</button>
+                   </div>
+               </form>
+           </div>
+       </div>
+   </main>
+    <footer>
+       <div class="footer-content">
+           <div class="footer-section">
+               <h3>关于我们</h3>
+               <p>岳阳高中书本转赠交流平台致力于促进教材资源的有效流转</p>
+           </div>
+           <div class="footer-section">
+               <h3>联系方式</h3>
+               <p>邮箱：contact@example.com</p>
+               <p>电话：123-456-7890</p>
+           </div>
+       </div>
+       <div class="footer-bottom">
+           <p>&copy; 2024 岳阳高中书本转赠交流网站. All rights reserved.</p>
+       </div>
+   </footer>
+    <script src="../js/publish.js"></script>
+</body>
+</html>

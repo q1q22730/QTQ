@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>捐赠书籍 - 岳阳高中书本转赠交流网站</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/donation.css">
+    <script src="../js/main.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="../assets/images/logo.png" alt="Logo">
+                <h1>岳阳高中书本转赠交流网站</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="search.html">搜索筛选</a></li>
+                    <li><a href="publish.html">发布书籍</a></li>
+                    <li><a href="forum.html">交流论坛</a></li>
+                    <li><a href="donation.html" class="active">捐赠书籍</a></li>
+                    <li><a href="book-manage.html">书籍管理</a></li>
+                </ul>
+                <div class="user-area">
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <img src="https://api.dicebear.com/7.x/initials/svg?seed=YY" alt="用户头像">
+                        </div>
+                        <span class="username">张同学</span>
+                    </div>
+                    <div class="user-dropdown">
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="fas fa-user"></i>个人中心
+                        </a>
+                        <a href="book-manage.html" class="dropdown-item">
+                            <i class="fas fa-book"></i>我的书籍
+                        </a>
+                        <a href="#" class="dropdown-item" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>退出登录
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="donation-container">
+            <!-- 捐赠说明部分优化 -->
+            <section class="donation-intro">
+                <h2>书籍捐赠</h2>
+                <p>让知识传递，让爱心延续。</p>
+                
+                <!-- 捐赠方式选择 -->
+                <div class="donation-methods">
+                    <div class="method-card">
+                        <div class="method-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3>直接捐赠</h3>
+                        <p>将书籍直接捐赠给需要的同学</p>
+                    </div>
+                    <div class="method-card">
+                        <i class="fas fa-school"></i>
+                        <h3>学校图书馆</h3>
+                        <p>捐赠给学校图书馆供大家借阅</p>
+                    </div>
+                    <div class="method-card">
+                        <i class="fas fa-book-reader"></i>
+                        <h3>爱心角</h3>
+                        <p>放置在教室爱心角供同学们共享</p>
+                    </div>
+                </div>
+
+                <!-- 捐赠流程说明 -->
+                <div class="donation-process">
+                    <h3>捐赠流程</h3>
+                    <div class="process-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-icon"><i class="fas fa-edit"></i></div>
+                            <h4>填写信息</h4>
+                            <p>填写书籍和个人信息</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-icon"><i class="fas fa-check-circle"></i></div>
+                            <h4>审核确认</h4>
+                            <p>工作人员审核信息</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-icon"><i class="fas fa-box"></i></div>
+                            <h4>书籍交接</h4>
+                            <p>选择交接方式完成捐赠</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-icon"><i class="fas fa-certificate"></i></div>
+                            <h4>获得证书</h4>
+                            <p>获得爱心捐赠证书</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 捐赠表单优化 -->
+            <section class="donation-form-section">
+                <h3>填写捐赠信息</h3>
+                <form id="donationForm" class="donation-form">
+                    <!-- 捐赠方式选择 -->
+                    <div class="form-group">
+                        <h4>选择捐赠方式</h4>
+                        <div class="donation-type">
+                            <label class="type-option">
+                                <input type="radio" name="donationType" value="direct" checked>
+                                <span class="type-content">
+                                    <i class="fas fa-hand-holding-heart"></i>
+                                    <span>直接捐赠</span>
+                                </span>
+                            </label>
+                            <label class="type-option">
+                                <input type="radio" name="donationType" value="library">
+                                <span class="type-content">
+                                    <i class="fas fa-school"></i>
+                                    <span>图书馆</span>
+                                </span>
+                            </label>
+                            <label class="type-option">
+                                <input type="radio" name="donationType" value="corner">
+                                <span class="type-content">
+                                    <i class="fas fa-book-reader"></i>
+                                    <span>爱心角</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 书籍信息 -->
+                    <div class="form-group">
+                        <h4>书籍信息</h4>
+                        <div id="booksList">
+                            <div class="book-item">
+                                <div class="book-header">
+                                    <h5>书籍 #1</h5>
+                                    <button type="button" class="remove-book"><i class="fas fa-times"></i></button>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label>书籍名称</label>
+                                        <input type="text" name="bookName[]" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>书籍类别</label>
+                                        <select name="bookSubject[]" required>
+                                            <option value="">请选择</option>
+                                            <option value="chinese">课外读物</option>
+                                            <option value="math">学习材料</option>
+                                            <option value="english">笔记资料</option>
+                                            <option value="physics">漫画绘本</option>
+                                            <option value="chemistry">杂志</option>
+                                            <option value="biology">其他</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label>适用年级</label>
+                                        <select name="bookGrade[]" required>
+                                            <option value="">请选择</option>
+                                            <option value="grade1">适用全部</option>
+                                            <option value="grade2">高一</option>
+                                            <option value="grade3">高二</option>
+                                            <option value="grade4">高三</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>成色</label>
+                                        <select name="bookCondition[]" required>
+                                            <option value="">请选择</option>
+                                            <option value="new">全新</option>
+                                            <option value="like-new">还算新</option>
+                                            <option value="good">有点旧</option>
+                                            <option value="fair">很旧</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-field">
+                                    <label>书籍描述</label>
+                                    <textarea name="bookDescription[]" rows="3" placeholder="请简要描述书籍的使用情况、笔记等信息"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" id="addBookBtn" class="add-book-btn">
+                            <i class="fas fa-plus"></i> 添加更多书籍
+                        </button>
+                    </div>
+
+                    <!-- 交接方式 -->
+                    <div class="form-group">
+                        <h4>交接方式</h4>
+                        <div class="handover-method">
+                            <label class="method-option">
+                                <input type="radio" name="handoverMethod" value="self" checked>
+                                <span class="method-content">
+                                    <i class="fas fa-walking"></i>
+                                    <span>自行送达</span>
+                                    <small>工作日到学校指定地点交接</small>
+                                </span>
+                            </label>
+                            <label class="method-option">
+                                <input type="radio" name="handoverMethod" value="pickup">
+                                <span class="method-content">
+                                    <i class="fas fa-people-carry"></i>
+                                    <span>上门取件</span>
+                                    <small>志愿者上门收取书籍</small>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 联系信息 -->
+                    <div class="form-group">
+                        <h4>联系信息</h4>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>姓名</label>
+                                <input type="text" name="donorName" required>
+                            </div>
+                            <div class="form-field">
+                                <label>联系电话</label>
+                                <input type="tel" name="donorPhone" required>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label>电子邮箱</label>
+                            <input type="email" name="donorEmail">
+                        </div>
+                        <div class="form-field">
+                            <label>年级班级</label>
+                            <input type="text" name="donorClass" required>
+                        </div>
+                    </div>
+
+                    <!-- 备注信息 -->
+                    <div class="form-group">
+                        <h4>备注信息</h4>
+                        <textarea id="donationNotes" name="notes" rows="4" placeholder="如有特殊说明请在此备注"></textarea>
+                    </div>
+
+                    <!-- 提交按钮 -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">提交捐赠</button>
+                        <button type="reset" class="btn-secondary">重置表单</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- 捐赠指南 -->
+            <section class="donation-guide">
+                <h3>捐赠指南</h3>
+                <div class="guide-steps">
+                    <div class="guide-step">
+                        <div class="step-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h4>填写信息</h4>
+                        <p>填写完整的捐赠信息，包括个人信息和书籍详情</p>
+                    </div>
+                    <div class="guide-step">
+                        <div class="step-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h4>确认审核</h4>
+                        <p>我们会在24小时内审核您的捐赠申请</p>
+                    </div>
+                    <div class="guide-step">
+                        <div class="step-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h4>书籍交接</h4>
+                        <p>选择自行送达或预约上门取件服务</p>
+                    </div>
+                    <div class="guide-step">
+                        <div class="step-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>完成捐赠</h4>
+                        <p>收到感谢证书，追踪捐赠书籍去向</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>关于我们</h3>
+                <p>岳阳高中书本转赠交流平台致力于促进教材资源的有效流转</p>
+            </div>
+            <div class="footer-section">
+                <h3>联系方式</h3>
+                <p>邮箱：contact@example.com</p>
+                <p>电话：123-456-7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 岳阳高中书本转赠交流网站. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="../js/donation.js"></script>
+</body>
+</html>

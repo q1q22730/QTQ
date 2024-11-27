@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>书籍管理 - 岳阳高中书本转赠交流网站</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/book-manage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LOG-EZq2aknfBsQXvIemuYIYSkdMmGYrzR.png" alt="Logo">
+                <h1>岳阳高中书本转赠交流网站</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="search.html">搜索筛选</a></li>
+                    <li><a href="publish.html">发布书籍</a></li>
+                    <li><a href="forum.html">交流论坛</a></li>
+                    <li><a href="donation.html">捐赠书籍</a></li>
+                    <li><a href="book-manage.html">书籍管理</a></li>
+                </ul>
+                <div class="user-area">
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <img src="https://api.dicebear.com/7.x/initials/svg?seed=YY" alt="用户头像">
+                        </div>
+                        <span class="username">张同学</span>
+                    </div>
+                    <div class="user-dropdown">
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="fas fa-user"></i>个人中心
+                        </a>
+                        <a href="book-manage.html" class="dropdown-item">
+                            <i class="fas fa-book"></i>我的书籍
+                        </a>
+                        <a href="#" class="dropdown-item" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>退出登录
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="manage-container">
+            <!-- 左侧菜单 -->
+            <aside class="manage-sidebar">
+                <nav class="manage-nav">
+                    <a href="#published" class="active" data-tab="published">
+                        <i class="fas fa-book"></i> 已发布书籍
+                    </a>
+                    <a href="#borrowed" data-tab="borrowed">
+                        <i class="fas fa-hand-holding-heart"></i> 借阅记录
+                    </a>
+                    <a href="#donated" data-tab="donated">
+                        <i class="fas fa-gift"></i> 捐赠记录
+                    </a>
+                    <a href="#profile" data-tab="profile">
+                        <i class="fas fa-user"></i> 个人信息
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- 右侧内容区 -->
+            <div class="manage-content">
+                <!-- 已发布书籍 -->
+                <section id="published" class="content-section active">
+                    <div class="section-header">
+                        <h2>已发布书籍</h2>
+                        <div class="actions">
+                            <button class="btn-primary">
+                                <i class="fas fa-plus"></i> 发布新书
+                            </button>
+                        </div>
+                    </div>
+                    <div class="books-grid">
+                        <!-- 书籍卡片将由 JavaScript 动态加载 -->
+                    </div>
+                </section>
+
+                <!-- 借阅记录 -->
+                <section id="borrowed" class="content-section">
+                    <h2>借阅记录</h2>
+                    <div class="record-list">
+                        <!-- 借阅记录将由 JavaScript 动态加载 -->
+                    </div>
+                </section>
+
+                <!-- 捐赠记录 -->
+                <section id="donated" class="content-section">
+                    <h2>捐赠记录</h2>
+                    <div class="record-list">
+                        <!-- 捐赠记录将由 JavaScript 动态加载 -->
+                    </div>
+                </section>
+
+                <!-- 个人信息 -->
+                <section id="profile" class="content-section">
+                    <h2>个人信息</h2>
+                    <div class="profile-container">
+                        <!-- 个人信息将由 JavaScript 动态加载 -->
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>关于我们</h3>
+                <p>岳阳高中书本转赠交流平台致力于促进教材资源的有效流转</p>
+            </div>
+            <div class="footer-section">
+                <h3>联系方式</h3>
+                <p>邮箱：contact@example.com</p>
+                <p>电话：123-456-7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 岳阳高中书本转赠交流网站. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/book-manage.js"></script>
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

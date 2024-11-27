@@ -1,0 +1,26 @@
+project/
+├── index.html          # 主页面（已创建）
+├── pages/             # 页面文件夹
+│   ├── publish.html   # 发布书籍页面
+│   ├── forum.html     # 交流评论页面
+│   ├── search.html    # 搜索筛选页面
+│   ├── donation.html  # 捐赠书籍页面
+│   └── book-manage.html # 书本管理页面
+├── css/               # 样式文件夹
+│   ├── main.css       # 主要样式
+│   ├── publish.css    # 发布页面样式
+│   ├── forum.css      # 论坛页面样式
+│   ├── search.css     # 搜索页面样式
+│   ├── donation.css   # 捐赠页面样式
+│   └── book-manage.css  # 书本管理页面样式
+├── js/                # JavaScript文件夹
+│   ├── main.js        # 主要脚本
+│   ├── publish.js     # 发布页面脚本
+│   ├── forum.js       # 论坛页面脚本
+│   ├── search.js      # 搜索页面脚本
+│   ├── donation.js    # 捐赠页面脚本
+│   └── book-manage.js   # 书本管理页面脚本
+└── assets/            # 资源文件夹
+    └── images/        # 图片资源文件夹
+        ├── logo.png   # 网站logo
+        └── icons/     # 图标文件夹

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>交流论坛 - 岳阳高中书本转赠交流网站</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/forum.css">
+    <script src="../js/main.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LOG-EZq2aknfBsQXvIemuYIYSkdMmGYrzR.png" alt="Logo">
+                <h1>岳阳高中书本转赠交流网站</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="search.html">搜索筛选</a></li>
+                    <li><a href="publish.html">发布书籍</a></li>
+                    <li><a href="forum.html" class="active">交流论坛</a></li>
+                    <li><a href="donation.html">捐赠书籍</a></li>
+                    <li><a href="book-manage.html">书籍管理</a></li>
+                </ul>
+                <div class="user-area">
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <img src="https://api.dicebear.com/7.x/initials/svg?seed=YY" alt="用户头像">
+                        </div>
+                        <span class="username">张同学</span>
+                    </div>
+                    <div class="user-dropdown">
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="fas fa-user"></i>个人中心
+                        </a>
+                        <a href="book-manage.html" class="dropdown-item">
+                            <i class="fas fa-book"></i>我的书籍
+                        </a>
+                        <a href="#" class="dropdown-item" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>退出登录
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="forum-container">
+            <!-- 论坛头部 -->
+            <div class="forum-header">
+                <div class="forum-actions">
+                    <button class="new-topic-btn" id="newTopicBtn">
+                        <i class="fas fa-plus"></i> 发布新话题
+                    </button>
+                    <div class="forum-search">
+                        <input type="text" placeholder="搜索感兴趣的话题..." id="searchInput">
+                        <button id="searchBtn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="forum-filters">
+                    <select id="categoryFilter">
+                        <option value="all">全部分类</option>
+                        <option value="study">学习交流</option>
+                        <option value="books">书籍分享</option>
+                        <option value="experience">经验心得</option>
+                    </select>
+                    <select id="sortFilter">
+                        <option value="latest">最新发布</option>
+                        <option value="hot">最热门</option>
+                        <option value="mostComments">评论最多</option>
+                        <option value="mostLikes">点赞最多</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 热门话题标签 -->
+            <div class="hot-tags">
+                <h2>热门话题标签:</h2>
+                <span class="tag" data-tag="高考复习">高考复习</span>
+                <span class="tag" data-tag="学习方法">学习方法</span>
+                <span class="tag" data-tag="教材推荐">教材推荐</span>
+                <span class="tag" data-tag="考试技巧">考试技巧</span>
+                <span class="tag" data-tag="学科难点">学科难点</span>
+            </div>
+
+            <!-- 话题列表 -->
+            <div class="topic-list">
+                <!-- 话题将由 JavaScript 动态加载 -->
+            </div>
+
+            <!-- 分页控件 -->
+            <div class="pagination">
+                <button class="page-btn prev-btn" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="page-numbers">
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <span>...</span>
+                    <button class="page-btn">10</button>
+                </div>
+                <button class="page-btn next-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 新话题模态框 -->
+        <div class="modal" id="newTopicModal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>发布新话题</h2>
+                    <button class="close-btn"><i class="fas fa-times"></i></button>
+                </div>
+                <form id="newTopicForm">
+                    <div class="form-group">
+                        <label for="topicTitle">标题</label>
+                        <input type="text" id="topicTitle" required placeholder="请输入话题标题">
+                    </div>
+                    <div class="form-group">
+                        <label for="topicCategory">分类</label>
+                        <select id="topicCategory" required>
+                            <option value="study">学习交流</option>
+                            <option value="books">书籍分享</option>
+                            <option value="experience">经验心得</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="topicContent">内容</label>
+                        <textarea id="topicContent" rows="6" required placeholder="请详细描述你的话题内容..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>添加标签</label>
+                        <div class="tag-selector">
+                            <span class="tag-option">#高考复习</span>
+                            <span class="tag-option">#学习方法</span>
+                            <span class="tag-option">#教材推荐</span>
+                            <span class="tag-option">#考试技巧</span>
+                        </div>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i> 发布话题
+                        </button>
+                        <button type="button" class="btn-secondary" onclick="closeModal()">
+                            取消
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>关于我们</h3>
+                <p>岳阳高中书本转赠交流平台致力于促进教材资源的有效流转</p>
+            </div>
+            <div class="footer-section">
+                <h3>联系方式</h3>
+                <p>邮箱：contact@example.com</p>
+                <p>电话：123-456-7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 岳阳高中书本转赠交流网站. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/forum.js"></script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>岳阳高中书本转赠交流网站</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="description" content="岳阳高中书本转赠交流网站">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="Logo">
+                <h1>岳阳高中书本转赠交流网站</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="pages/search.html">搜索筛选</a></li>
+                    <li><a href="pages/publish.html">发布书籍</a></li>
+                    <li><a href="pages/forum.html">交流论坛</a></li>
+                    <li><a href="pages/donation.html">捐赠书籍</a></li>
+                    <li><a href="pages/book-manage.html">书籍管理</a></li>
+                </ul>
+                <!-- 用户区域 - 头像和用户名水平排列 -->
+                <div class="user-area">
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <img src="https://api.dicebear.com/7.x/initials/svg?seed=YY" alt="用户头像">
+                        </div>
+                        <span class="username">张同学</span>
+                    </div>
+                    <div class="user-dropdown">
+                        <a href="pages/profile.html" class="dropdown-item">
+                            <i class="fas fa-user"></i>个人中心
+                        </a>
+                        <a href="pages/book-manage.html" class="dropdown-item">
+                            <i class="fas fa-book"></i>我的书籍
+                        </a>
+                        <a href="#" class="dropdown-item" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>退出登录
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 英雄区域 -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>让知识传递，让爱心延续</h2>
+                <p>岳阳高中书本转赠交流平台，让每一本书都能发挥最大的价值</p>
+                <div class="hero-actions">
+                    <a href="pages/search.html" class="btn primary-btn">
+                        <i class="fas fa-search"></i> 寻找书籍
+                    </a>
+                    <a href="pages/publish.html" class="btn secondary-btn">
+                        <i class="fas fa-upload"></i> 发布书籍
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 平台数据 -->
+        <section class="platform-stats">
+            <div class="stat-card">
+                <i class="fas fa-book"></i>
+                <div class="stat-info">
+                    <span class="stat-number">5234</span>
+                    <span class="stat-label">已享书籍</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <div class="stat-info">
+                    <span class="stat-number">3721</span>
+                    <span class="stat-label">活跃用户</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-handshake"></i>
+                <div class="stat-info">
+                    <span class="stat-number">8456</span>
+                    <span class="stat-label">成功转赠</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 最新书籍 -->
+        <section class="latest-books">
+            <div class="section-header">
+                <h2>精选书籍</h2>
+                <a href="pages/search.html" class="view-all">查看全部 <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="books-grid">
+                <!-- 书籍内容将由 JavaScript 动态加载 -->
+            </div>
+        </section>
+        <!-- 热门分类 -->
+        <section class="categories">
+            <div class="section-header">
+                <h2>热门类别</h2>
+            </div>
+            <div class="category-grid">
+                <a href="pages/search.html?category=study" class="category-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>学习材料</h3>
+                    <span class="book-count">1,234本</span>
+                </a>
+                <a href="pages/search.html?category=reading" class="category-card">
+                    <i class="fas fa-book-reader"></i>
+                    <h3>课外读物</h3>
+                    <span class="book-count">987本</span>
+                </a>
+                <a href="pages/search.html?category=notes" class="category-card">
+                    <i class="fas fa-pencil-alt"></i>
+                    <h3>笔记资料</h3>
+                    <span class="book-count">876本</span>
+                </a>
+                <a href="pages/search.html?category=comics" class="category-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>漫画绘本</h3>
+                    <span class="book-count">654本</span>
+                </a>
+                <a href="pages/search.html?category=magazine" class="category-card">
+                    <i class="fas fa-newspaper"></i>
+                    <h3>杂志期刊</h3>
+                    <span class="book-count">543本</span>
+                </a>
+                <a href="pages/search.html?category=other" class="category-card">
+                    <i class="fas fa-ellipsis-h"></i>
+                    <h3>其他书籍</h3>
+                    <span class="book-count">432本</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 平台特色 -->
+        <section class="features">
+            <div class="section-header">
+                <h2>平台特色</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>资源循环</h3>
+                    <p>促进教材资源的有效流转，减少浪费</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>安全可靠</h3>
+                    <p>校内认证，确保交易安全</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>爱心传递</h3>
+                    <p>发扬互助精神，共建温暖校园</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 最新动态 -->
+        <section class="news">
+            <div class="section-header">
+                <h2>最新动态</h2>
+                <a href="pages/forum.html" class="view-all">查看全部 <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="news-grid">
+                <!-- 动态卡片将通过JavaScript动态加载 -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>关于我们</h3>
+                <p>岳阳高中书本转赠交流平台致力于促进教材资源的有效流转</p>
+            </div>
+            <div class="footer-section">
+                <h3>联系方式</h3>
+                <p>邮箱：contact@example.com</p>
+                <p>电话：123-456-7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 岳阳高中书本转赠交流网站. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+    <!-- 添加结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "name": "岳阳高中书本转赠交流网站",
+        "description": "促进教材资源的有效流转，让知识传递，让爱心延续",
+        "url": "https://example.com"
+    }
+    </script>
+</body>
+</html>

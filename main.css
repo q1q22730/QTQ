@@ -1,0 +1,465 @@
+/* 全局重置和基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #45a049;
+    --text-color: #333;
+    --light-gray: #f8f9fa;
+    --border-color: #eef0f2;
+    --shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fff;
+    font-weight: 500;
+}
+
+/* 头部基础样式 */
+header {
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/* header内容布局 */
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.8rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo区域样式 */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: none;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo h1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 导航栏样式 */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* 导航链接样式优化 */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;  /* 减小间距 */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    display: inline-block;
+    padding: 0.5rem 0.8rem;  /* 减小内边距 */
+    color: #333;  /* 加深文字颜色 */
+    text-decoration: none;
+    font-size: 0.95rem;  /* 稍微减小字号 */
+    font-weight: 600;  /* 加粗所有导航文字 */
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+    background-color: rgba(76, 175, 80, 0.08);
+}
+
+.nav-links a.active {
+    color: var(--primary-color);
+    background-color: rgba(76, 175, 80, 0.12);
+    font-weight: 700;  /* 当前页面导航更粗 */
+}
+
+/* 添加微妙的分隔效果 */
+.nav-links li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -0.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 15px;
+    width: 1px;
+    background: rgba(0, 0, 0, 0.08);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 0.4rem;
+    }
+
+    .nav-links a {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .nav-links li:not(:last-child)::after {
+        display: none;  /* 移动端隐藏分隔线 */
+    }
+}
+
+/* 主要内容区域 */
+main {
+    margin-top: 80px;
+    min-height: calc(100vh - 80px - 200px);
+    padding: 2rem;
+}
+
+/* 页面容器 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* 按钮通用样式 */
+.btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: white;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+/* 页脚样式 */
+footer {
+    background-color: var(--light-gray);
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+    .header-content {
+        padding: 0.8rem 1rem;
+    }
+    
+    nav {
+        margin-left: 1rem;
+    }
+    
+    nav ul {
+        gap: 0.8rem;
+    }
+    
+    nav a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .logo {
+        margin-bottom: 0.8rem;
+        justify-content: center;
+    }
+    
+    nav {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+    }
+    
+    main {
+        margin-top: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        padding: 0.8rem 0.5rem;
+    }
+    
+    .logo img {
+        height: 40px;
+    }
+    
+    .logo h1 {
+        font-size: 1rem;
+    }
+    
+    nav a {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* 增加全局文字可读性 */
+body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fff;
+    font-weight: 500;
+}
+
+/* 导航文字加粗 */
+nav a {
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+/* 标题文字加粗 */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+/* 普通文本加粗 */
+p, span, label, input, select, textarea {
+    font-weight: 500;
+}
+
+/* 按钮文字加粗 */
+button, .btn {
+    font-weight: 600;
+}
+
+/* 表单标签加粗 */
+label {
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+/* 输入框文字加大 */
+input, select, textarea {
+    font-size: 1.05rem;
+}
+
+/* 用户区域样式调整 */
+.user-area {
+    margin-left: 1.5rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.3rem;
+    border-radius: 20px;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.username {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-color);
+    white-space: nowrap;
+}
+
+/* 下拉菜单样式 */
+.user-dropdown {
+    display: none;
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.user-area:hover .user-dropdown {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 0.8rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background: rgba(76, 175, 80, 0.08);
+}
+
+.dropdown-item i {
+    color: var(--primary-color);
+    width: 16px;
+    text-align: center;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .user-area {
+        margin: 0.5rem 0;
+    }
+    
+    .user-dropdown {
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
+/* 响应式调整 */
+@media (max-width: 992px) {
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .auth-buttons {
+        margin-left: 0.5rem;
+    }
+    
+    .login-btn, .register-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .auth-buttons {
+        margin: 0.5rem 0;
+    }
+}
+
+/* 登录注册按钮样式 */
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.login-btn, .register-btn {
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.login-btn {
+    color: var(--primary-color);
+    background: transparent;
+    border: 1px solid var(--primary-color);
+}
+
+.login-btn:hover {
+    background: rgba(76, 175, 80, 0.08);
+}
+
+.register-btn {
+    color: white;
+    background: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.register-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-1px);
+}
